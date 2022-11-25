@@ -1,0 +1,20 @@
+<h3>{{titulo}}</h3>
+<label>Pesquisar: </label>
+<input type="text" [(ngModel)]="nomePesquisado">
+<br />
+<table *ngIf="lista.length > 0">
+    <tr>
+        <th>ID</th>
+        <th>Destino</th>
+        <th>Primeira Noite</th>
+        <th>AÇÃO</th>
+    </tr>
+    <tr *ngFor="let viag of lista | filtroPesquisa:nomePesquisado">
+        <td>{{viag._id}}</td>
+        <td>{{viag.nome_destino}}</td>
+        <td>{{viag.manha_primeiro_dia}}</td>
+        <td><a routerLink="/edit/{{viag._id}}">Editar</a></td>
+        <td><a routerLink="/tabela" (click)="deletar(viag._id)">Deletar</a></td>
+    </tr>
+</table>
+<p *ngIf="lista.length <= 0"> NÃO HÁ VIAGENS CADASTRADOS! </p>

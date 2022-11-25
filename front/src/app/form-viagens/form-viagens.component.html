@@ -1,0 +1,15 @@
+<h3>Formulário de Viagens</h3>
+
+<label for="nome">Destino:</label>
+<input [(ngModel)]="viagem.nome_destino" id="nome">
+<br />
+
+<label for="manha_primeiro_dia">Manhã Primeiro Dia:</label>
+<input type="number" [(ngModel)]="viagem.manha_primeiro_dia" id="manha_primeiro_dia">
+<br />
+
+<button (click)="salvar()">{{botaoAcao}}</button>
+<button (click)="cancelar()">Cancelar</button>
+
+<h4>{{mensagem}}</h4>
+<br />

@@ -1,20 +1,17 @@
 const mongoose = require ('mongoose')
 const Schema = mongoose.Schema;
-// const {Schema} = mongoose;
 
 const ViagemSchema = new Schema({
     nome_destino: String,
-    manha_primeiro_dia: String,
-    tarde_primeiro_dia: String,
+    dia_primeiro_dia: String,
     noite_primeiro_dia: String,
-    manha_segundo_dia: String,
-    tarde_segundo_dia: String,
+    dia_segundo_dia: String,
     noite_segundo_dia: String,
     local_hospedagem: String,
-    valor_hospedagem: Number,
-    valor_alimentacao: Number,
-    valor_entreterimento: Number,
-    categoria: { type: Schema.Types.ObjectId, ref: 'Categoria' }
+    gasto_total: Number,
+    foto_destino1: String,
+    nomeCategoria: { type: Schema.Types.ObjectId, ref: 'Categoria.nomeCategoria' }
+
 },
 {
     versionKey: false, collection: 'viagens'

@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/',categoriaControler.listar)
 router.post('/', categoriaControler.inserir)
 router.get('/:id', categoriaControler.buscarPorId)
-router.put('/:id', categoriaControler.atualizar)
+router.put('/:id', categoriaControler.editar)
 router.delete('/:id', categoriaControler.deletar)
 
 module.exports = router;

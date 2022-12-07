@@ -13,16 +13,14 @@ exports.inserir = (req, res) => {
     const viagemRequest = req.body;
     if(viagemRequest && 
         viagemRequest.nome_destino && 
-        viagemRequest.manha_primeiro_dia && 
-        viagemRequest.tarde_primeiro_dia && 
-        viagemRequest.noite_primeiro_dia && 
-        viagemRequest.manha_segundo_dia &&
-        viagemRequest.tarde_segundo_dia &&
+        viagemRequest.dia_primeiro_dia && 
+        viagemRequest.noite_primeiro_dia &&  
+        viagemRequest.dia_segundo_dia &&
         viagemRequest.noite_segundo_dia &&
         viagemRequest.local_hospedagem &&
-        viagemRequest.valor_hospedagem &&
-        viagemRequest.valor_alimentacao &&
-        viagemRequest.valor_entreterimento) {
+        viagemRequest.gasto_total && 
+        viagemRequest.foto_destino1
+        ) {
 
         const viagemNovo = new Viagem(viagemRequest);
         viagemNovo.save((err, viagemSalvo) => {
@@ -62,21 +60,19 @@ exports.buscarPorId = (req, res) => {
     })
 }
 
-exports.atualizar = (req, res) => {
+exports.editar = (req, res) => {
     const id = req.params.id;
     const viagemRequest = req.body;
 
     if(!viagemRequest || !viagemRequest.nome_destino 
-        || !viagemRequest.manha_primeiro_dia
-        || !viagemRequest.tarde_primeiro_dia
+        || !viagemRequest.dia_primeiro_dia
         || !viagemRequest.noite_primeiro_dia
-        || !viagemRequest.manha_segundo_dia
-        || !viagemRequest.tarde_segundo_dia
+        || !viagemRequest.dia_segundo_dia
         || !viagemRequest.noite_segundo_dia
         || !viagemRequest.local_hospedagem
-        || !viagemRequest.valor_hospedagem
-        || !viagemRequest.valor_entreterimento
-        || !viagemRequest.valor_alimentacao ) {
+        || !viagemRequest.gasto_total
+        || !viagemRequest.foto_destino1 
+        ) {
         return res.status(400).json({
             Erro:"Nome e/ou valores são obrigatórios"
         });    

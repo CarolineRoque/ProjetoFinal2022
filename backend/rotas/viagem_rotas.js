@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/', viagemController.listar)
 router.post('/', viagemController.inserir)
 router.get('/:id', viagemController.buscarPorId)
-router.put('/:id', viagemController.atualizar)
+router.put('/:id', viagemController.editar)
 router.delete('/:id', viagemController.deletar)
 
 module.exports = router;

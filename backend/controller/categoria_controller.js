@@ -53,7 +53,7 @@ exports.buscarPorId = (req, res) => {
     })
 }
 
-exports.atualizar = (req, res) => {
+exports.editar = (req, res) => {
     const id = req.params.id;
     const categoriaRequest = req.body;
 

@@ -1,14 +1,13 @@
 export class Viagem {
     _id!: number;
     nome_destino: string = "";
-    manha_primeiro_dia: string = "";
-  //  tarde_primeiro_dia: string = "";
-   // noite_primeiro_dia: string = "";
-   // manha_segundo_dia: string = "";
-   // tarde_segundo_dia: string = "";
-   // noite_segundo_dia: string = "";
-   // local_hospedagem: string = "";
-   // valor_hospedagem: number = 0;
-    //valor_alimentacao: number = 0;
-    //valor_entreterimento: number = 0
+    dia_primeiro_dia: string = "";
+    noite_primeiro_dia: string = "";
+    dia_segundo_dia: string = "";
+    noite_segundo_dia: string = "";
+    local_hospedagem: string = "";
+    gasto_total: number = 0;
+    foto_destino1: string = "";
+    nomeCategoria: number = 0;
+    categoria: string="";
 }

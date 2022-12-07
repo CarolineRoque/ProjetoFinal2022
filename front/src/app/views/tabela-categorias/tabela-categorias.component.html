@@ -1,0 +1,26 @@
+<c-card>
+    <c-card-header>
+    <h3>{{titulo}}</h3>
+</c-card-header>
+<c-card-body> 
+<h5 id="novacat">Incluir nova Categoria</h5>
+<a routerLink="/novaCategoria" cButton color="dark" id="btnovacat">Incluir Categoria</a> <br><br>
+<table *ngIf="lista.length > 0">
+    <tr>
+
+        <th>Categoria</th>
+        <th>Editar</th>
+        <th>Deletar</th>
+    </tr>
+    <tr *ngFor="let categ of lista">
+        <!-- <th>ID</th><td>{{viag._id}}</td> -->
+        <td>{{categ.nomeCategoria}}</td>
+
+        
+        <td><a routerLink="/editCategoria/{{categ._id}}" cButton color="primary">Editar</a></td> 
+        <td><a routerLink="/tabelaCategoria" (click)="deletar(categ._id)" cButton color="danger">Deletar</a></td>
+    </tr>
+</table>
+<p *ngIf="lista.length <= 0"> NÃO HÁ CATEGORIAS CADASTRADAS! </p>
+    </c-card-body>
+</c-card>

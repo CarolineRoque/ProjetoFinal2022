@@ -18,7 +18,7 @@ export class ViagemApiService {
 
   constructor(private http: HttpClient) { }
 
-  listar(): Observable<Viagem[]> {
+  listarViagem(): Observable<Viagem[]> {
     return this.http.get<Viagem[]>(this.baseAPI);
   }
 
@@ -26,12 +26,18 @@ export class ViagemApiService {
     return this.http.post<Viagem>(this.baseAPI, viagem, httpOptions);
   }
 
-  buscarPorId(id:number){
+  buscarPorId(id:number): Observable<Viagem> {
+    const uri = `${this.baseAPI}/${id}`;//baseAPI + "/"+ id;
+    return this.http.get<Viagem>(uri);  
   }
 
-  editar(id: number, viagem: Viagem) {
+  editar(id: number, viagem: Viagem): Observable<Viagem> {
+    const uri = `${this.baseAPI}/${id}`;//baseAPI + "/"+ id;
+    return this.http.put<Viagem>(uri, viagem, httpOptions);    
   }
 
-  deletar(id: number) {
+  deletar(id: number){
+    const uri = `${this.baseAPI}/${id}`;//baseAPI + "/"+ id;
+    return this.http.delete(uri);
   }
 }

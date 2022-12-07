@@ -1,0 +1,37 @@
+<c-card>
+    <c-card-header>
+
+<h3>{{titulo}}</h3>
+<label>Destino:</label>
+<label>{{viagem.nome_destino}} </label><br>
+</c-card-header>
+<c-card-body> 
+
+<img id="fotodestino" src={{viagem.foto_destino1}}><br><br>
+<hr>
+<h4>Primeiro Dia</h4>
+<hr>
+<label><b>Descrição completa do primeiro dia:</b></label><br>
+<label>{{viagem.dia_primeiro_dia}} </label><br>
+
+<label><b>Descrição completa da primeira noite:</b></label><br>
+<label>{{viagem.noite_primeiro_dia}} </label><br><br>
+
+<h4>Segundo Dia</h4><hr>
+
+<label><b>Descrição completa do segundo dia:</b></label><br>
+<label>{{viagem.dia_segundo_dia}} </label><br>
+
+<label><b>Descrição completa da segunda noite:</b></label><br>
+<label>{{viagem.noite_segundo_dia}} </label><br><br>
+
+<h4>Outras Informações</h4><hr>
+<label><b>Local da hospedagem: </b></label>
+<label>{{viagem.local_hospedagem}} </label><br>
+
+<label><b>Total gasto durante a viagem: </b> </label>
+<label>{{viagem.gasto_total}} </label>
+
+<br />
+</c-card-body>
+</c-card>

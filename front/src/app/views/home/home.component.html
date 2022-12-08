@@ -1,28 +1,44 @@
 <div id="fundohome">
-<c-container>
-  <c-row xs="auto">
-    <c-col><h4><i><label id="labelPesquisarViagem">Pesquisar viagem: </label></i><br></h4></c-col>
-    <c-col><input id="pesquiva_viagem"
-      cFormControl
-      placeholder="Digite o destino"> <br></c-col>  
-
-    <c-col><button cButton color="primary" variant="outline">Buscar</button></c-col>
-  </c-row>  
-</c-container>
-</div>
-<br>
-<c-carousel *ngIf= "render" >
-  <c-carousel-indicators></c-carousel-indicators>
-  <c-carousel-inner>
-    <c-carousel-item *ngFor="let slide of slides">
-      <img 
-        alt="{{slide.title}}"class="d-block w-100" loading="lazy" src="{{slide.src}}" (click)="detalhe(slide.idViagem)"/>
-      <c-carousel-caption class="d-none d-md-block">
-        <h3>{{slide.title}}</h3>
-        <p>{{slide.subtitle}}</p>
-      </c-carousel-caption>
-    </c-carousel-item>
-  </c-carousel-inner>
-  <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
-  <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
-</c-carousel>
+  <c-container>
+    <c-row xs="auto">
+      <c-col><h4><i><label id="labelPesquisarViagem">Pesquisar viagem: </label></i><br></h4></c-col>
+      <c-col><input  id="pesquiva_viagem" cFormControl
+        placeholder="Digite o destino"  [(ngModel)]="pesquisa_viagem" /> <br></c-col>  
+  
+      <c-col><button cButton color="primary" variant="outline" (click)="buscaViagem()" >Buscar</button></c-col>
+      <c-col><button cButton color="primary" variant="outline" (click)="limparPesquisa()">Limpar Pesquisa</button></c-col>
+    </c-row>  
+  </c-container>
+  </div>
+  <br>
+  <c-carousel *ngIf= "render" >
+    <c-carousel-indicators></c-carousel-indicators>
+    <c-carousel-inner>
+      <c-carousel-item *ngFor="let slide of slides">
+        <img 
+          alt="{{slide.title}}"class="d-block w-100" loading="lazy" src="{{slide.src}}" (click)="detalhe(slide.idViagem)"/>
+        <c-carousel-caption class="d-none d-md-block">
+          <h3>{{slide.title}}</h3>
+          <p>{{slide.subtitle}}</p>
+        </c-carousel-caption>
+      </c-carousel-item>
+    </c-carousel-inner>
+    <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
+    <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+  </c-carousel>
+  
+  <c-carousel *ngIf= "render2" >
+    <c-carousel-indicators></c-carousel-indicators>
+    <c-carousel-inner>
+      <c-carousel-item *ngFor="let slide of find_slides">
+        <img 
+          alt="{{slide.title}}"class="d-block w-100" loading="lazy" src="{{slide.src}}" (click)="detalhe(slide.idViagem)"/>
+        <c-carousel-caption class="d-none d-md-block">
+          <h3>{{slide.title}}</h3>
+          <p>{{slide.subtitle}}</p>
+        </c-carousel-caption>
+      </c-carousel-item>
+    </c-carousel-inner>
+    <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
+    <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+  </c-carousel>

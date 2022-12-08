@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import {
   TableModule,
   CarouselModule,
   ButtonModule,
   CardModule,
-  GridModule
+  GridModule,
+  FormModule,
 } from '@coreui/angular';
 
 import { HomeRoutingModule } from './home-routing.module';
@@ -23,7 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     ButtonModule,
     CardModule,
-    GridModule 
+    GridModule,
+    FormModule, 
+    FormsModule 
     
   ],
   declarations: [HomeComponent]

@@ -1,28 +1,24 @@
 <c-card>
     <c-card-header>
         <h3>{{titulo}}</h3>
-
     </c-card-header>
-    <c-card-body>    
+
+    <c-card-body>       
     <h5 id="novaviag">Incluir nova Viagem</h5>
     <a routerLink="/novo" cButton color="dark" id="btnovaviag">Incluir Viagem</a> <br><br>
-    
-<h5><label>Pesquisar viagem: </label><br></h5>
-<input type="text" [(ngModel)]="nomePesquisado"> <br>
+    <h5><label>Pesquisar viagem: </label><br></h5>
+    <input type="text" [(ngModel)]="nomePesquisado"> <br>
 
-<!-- <input type="text" [(ngModel)]="nomePesquisado">-->
-<br />
+<br/>
 <table cTable *ngIf="lista.length > 0">
     <tr>
         <th scope="col" >Destino</th>
-        
         <th>Editar</th>
         <th>Deletar</th>
     </tr>
     <tr *ngFor="let viag of lista  | filtroPesquisa:nomePesquisado" >
 
         <td>{{viag.nome_destino}}</td>
-
         <td><a routerLink="/edit/{{viag._id}}" cButton color="primary" >Editar</a></td>
         <td><a routerLink="/tabela" (click)="deletar(viag._id)" cButton color="danger">Deletar</a></td>
     </tr>

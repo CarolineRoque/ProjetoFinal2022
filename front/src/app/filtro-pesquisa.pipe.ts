@@ -9,7 +9,6 @@ export class FiltroPesquisaPipe implements PipeTransform {
 
   transform(listaViagens: Viagem[], valor?: string): Viagem[] {
     const nome = valor ?valor :"";
-    console.log(nome);
     return listaViagens.filter(
       (viagem) => 
         viagem.nome_destino.toLocaleLowerCase().includes(nome.toLowerCase())

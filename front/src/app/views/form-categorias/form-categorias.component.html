@@ -3,15 +3,15 @@
         <h3>Formulário de Categoria</h3>
     </c-card-header>
     <c-card-body>
+
 <label for="nome">Categoria:</label> <br><br> 
 <input [(ngModel)]="categoria.nomeCategoria" id="nome"
 cFormControl
 placeholder="Nome categoria">
-<br />
+<br/>
 
 <button (click)="cancelar()"  cButton color="danger" id="botaocalcelar" >Cancelar</button>
 <button (click)="salvar()" cButton color="primary" id="botaoacao" >{{botaoAcao}}</button>
-
 
 <h4>{{mensagem}}</h4>
 <br />

@@ -33,7 +33,6 @@ export class CategoriaApiService {
 
   editar(id: number, categoria: Categoria): Observable<Categoria> {
     const uri = `${this.baseAPI}/${id}`;//baseAPI + "/"+ id;
-    console.log("URI", categoria)
     return this.http.put<Categoria>(uri, categoria, httpOptions);    
   }
 

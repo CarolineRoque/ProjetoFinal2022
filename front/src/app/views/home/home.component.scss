@@ -6,3 +6,20 @@
     }
   }
   
+  input, button {
+
+    width: 100%;
+    height: 38px;
+    border-radius: 10px;
+    border-color: cornflowerblue;
+    margin-top: 30px;
+}
+#labelPesquisarViagem{
+  padding-top: 3px;
+  margin-top: 30px;
+}
+div{
+  height: 100px;
+  width: 100%;
+  background-image: linear-gradient(rgb(200, 232, 245), rgb(236, 243, 247));
+}

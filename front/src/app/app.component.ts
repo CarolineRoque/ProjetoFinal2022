@@ -6,7 +6,6 @@ import { iconSubset } from './icons/icon-subset';
 import { Title } from '@angular/platform-browser';
 
 @Component({
-  // tslint:disable-next-line:component-selector
   selector: 'body',
   template: '<router-outlet></router-outlet>',
 })
@@ -19,7 +18,6 @@ export class AppComponent implements OnInit {
     private iconSetService: IconSetService
   ) {
     titleService.setTitle(this.title);
-    // iconSet singleton
     iconSetService.icons = { ...iconSubset };
   }
 

@@ -29,7 +29,6 @@ export class TabelaCategoriasComponent implements OnInit {
   deletar(id: number){
     this.servico.deletar(id).subscribe(res => {
       this.listarCategoria();
-      console.log(res);
     });
   }
 }

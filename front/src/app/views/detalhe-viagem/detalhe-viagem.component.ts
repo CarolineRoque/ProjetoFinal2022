@@ -28,7 +28,6 @@ export class DetalheViagemComponent implements OnInit {
   pegarId(){
     this.id = this.route.snapshot.params['id'];
     this.mensagem = "";
-    console.log(this.route.snapshot.params['id']);
     if(this.id) {
 
     this.viagemApiService.buscarPorId(this.id).subscribe(data => {

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from '../../../app/categoria';
 import { CategoriaApiService } from '../../../app/categoria-api.service';
@@ -17,7 +16,6 @@ export class FormCategoriasComponent implements OnInit {
   categoria = new Categoria();
   botaoAcao = "Salvar";
 
-
   constructor(
     private categoriaApiService: CategoriaApiService,
     private route: ActivatedRoute,
@@ -28,19 +26,16 @@ export class FormCategoriasComponent implements OnInit {
   ngOnInit(): void {
 
     this.id = this.route.snapshot.params['id'];
-    console.log(this.id)
     this.mensagem = "";
-    console.log("ID", this.id);
+
     if(this.id) {
       this.botaoAcao= "Editar";      
-      console.log("Categoria", this.categoria);
     }
   }
 
   salvar() {
     if(!this.id) {
       this.categoriaApiService.inserir(this.categoria).subscribe(categoria => {
-        console.log("Categoria Cadastrada", categoria);
         this.mensagem = this.categoria.nomeCategoria
         + " cadastrado com sucesso!";
         this.categoria = new Categoria();

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { DefaultLayoutComponent } from './containers';
 import { FormViagensComponent } from './views/form-viagens/form-viagens.component';
 import { TabelaViagensComponent } from './views/tabela-viagens/tabela-viagens.component';
@@ -34,7 +33,6 @@ const routes: Routes = [
         loadChildren: () =>
           import('./views/home/home.module').then((m) => m.HomeModule)
       }
-
     ]
   }
 ]
@@ -44,7 +42,6 @@ const routes: Routes = [
       scrollPositionRestoration: 'top',
       anchorScrolling: 'enabled',
       initialNavigation: 'enabledBlocking'
-      // relativeLinkResolution: 'legacy'
     })
   ],
   exports: [RouterModule]

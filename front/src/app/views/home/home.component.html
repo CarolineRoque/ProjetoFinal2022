@@ -1,16 +1,22 @@
-<h5><label>Pesquisar viagem: </label><br></h5>
-<input type="text"> <br>
+<div id="fundohome">
+<c-container>
+  <c-row xs="auto">
+    <c-col><h4><i><label id="labelPesquisarViagem">Pesquisar viagem: </label></i><br></h4></c-col>
+    <c-col><input id="pesquiva_viagem"
+      cFormControl
+      placeholder="Digite o destino"> <br></c-col>  
 
+    <c-col><button cButton color="primary" variant="outline">Buscar</button></c-col>
+  </c-row>  
+</c-container>
+</div>
+<br>
 <c-carousel *ngIf= "render" >
   <c-carousel-indicators></c-carousel-indicators>
   <c-carousel-inner>
     <c-carousel-item *ngFor="let slide of slides">
       <img 
-        alt="{{slide.title}}"
-        class="d-block w-100"
-        loading="lazy"
-        src="{{slide.src}}" (click)="detalhe(slide.idViagem)"
-      />
+        alt="{{slide.title}}"class="d-block w-100" loading="lazy" src="{{slide.src}}" (click)="detalhe(slide.idViagem)"/>
       <c-carousel-caption class="d-none d-md-block">
         <h3>{{slide.title}}</h3>
         <p>{{slide.subtitle}}</p>

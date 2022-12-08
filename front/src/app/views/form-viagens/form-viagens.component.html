@@ -2,15 +2,12 @@
   <c-card-header>
     <h3>Formulário de Viagens</h3>
   </c-card-header>
-
   <c-card-body>
   <c-row>  
     <c-col [xs]>
       <label for="nome">Destino:</label>
-      <input  [(ngModel)]="viagem.nome_destino" id="nome"
-      cFormControl
-      placeholder="Destino">
-      </c-col>
+      <input  [(ngModel)]="viagem.nome_destino" id="nome" cFormControl placeholder="Destino">
+    </c-col>
     <c-col [xs]>
     <label for="categoria_destino">Categoria destino:</label><br>
     <select [(ngModel)]= "viagem.nomeCategoria" name="nomeCategoria" aria-label="Default select example" cSelect>
@@ -18,8 +15,7 @@
       <option *ngFor="let option of selecionarLista" [ngValue]="option._id" placeholder="Destino">
         {{ option.nomeCategoria }}
       </option>
-
-</select><br>
+    </select><br>
 </c-col>
 </c-row>
 
@@ -27,19 +23,19 @@
 <textarea  type="text" [(ngModel)]="viagem.dia_primeiro_dia" id="dia_primeiro_dia"
 cFormControl
 placeholder="Descrição completa do primeiro dia" rows="4"></textarea>
-<br />
+<br/>
 
 <label for="noite_primeiro_dia">Noite Primeiro Dia:</label>
 <textarea type="name" [(ngModel)]="viagem.noite_primeiro_dia" id="noite_primeiro_dia"
 cFormControl
 placeholder="Descrição completa da primeira noite" rows="4"></textarea>
-<br />
+<br/>
 
 <label for="dia_segundo_dia">Segundo Dia:</label>
 <textarea type="name" [(ngModel)]="viagem.dia_segundo_dia" id="dia_segundo_dia"
 cFormControl
 placeholder="Descrição completa do segundo dia" rows="4"></textarea>
-<br />
+<br/>
 
 
 <label for="noite_segundo_dia">Segunda Noite:</label>

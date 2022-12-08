@@ -13,14 +13,11 @@ export class TabelaViagensComponent implements OnInit {
   nomePesquisado = "";
   lista: Viagem[] = []
 
-
   constructor(private servico: ViagemApiService, private http: HttpClient) {
     this.listarViagem();
   }
-
   ngOnInit(): void {
   }
-
 
   listarViagem() {
     this.servico.listarViagem().subscribe(
@@ -33,7 +30,6 @@ export class TabelaViagensComponent implements OnInit {
   deletar(id: number){
     this.servico.deletar(id).subscribe(res => {
       this.listarViagem();
-      console.log(res);
     });
   }
 }

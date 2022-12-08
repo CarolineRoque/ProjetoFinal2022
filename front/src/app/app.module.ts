@@ -12,13 +12,10 @@ import {
   PerfectScrollbarModule,
 } from 'ngx-perfect-scrollbar';
 
-// Import routing module
 import { AppRoutingModule } from './app-routing.module';
 
-// Import app component
 import { AppComponent } from './app.component';
 
-// Import containers
 import {
   DefaultFooterComponent,
   DefaultHeaderComponent,
@@ -29,7 +26,6 @@ import {
   AvatarModule,
   BadgeModule,
   BreadcrumbModule,
-  ButtonGroupModule,
   ButtonModule,
   CardModule,
   DropdownModule,
@@ -43,10 +39,9 @@ import {
   SharedModule,
   SidebarModule,
   TabsModule,
-  UtilitiesModule
+  UtilitiesModule,
   
 } from '@coreui/angular';
-
 import { IconModule, IconSetService } from '@coreui/icons-angular';
 import { FormViagensComponent } from './views/form-viagens/form-viagens.component';
 import { TabelaViagensComponent } from './views/tabela-viagens/tabela-viagens.component';
@@ -54,7 +49,6 @@ import { FormCategoriasComponent } from './views/form-categorias/form-categorias
 import { TabelaCategoriasComponent } from './views/tabela-categorias/tabela-categorias.component';
 import { DetalheViagemComponent } from './views/detalhe-viagem/detalhe-viagem.component'
 import { FiltroPesquisaPipe } from './filtro-pesquisa.pipe';
-
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -91,7 +85,6 @@ const APP_CONTAINERS = [
     ButtonModule,
     FormModule,
     UtilitiesModule,
-    //ButtonGroupModule,
     ReactiveFormsModule,
     SidebarModule,
     SharedModule,
